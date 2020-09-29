@@ -13,8 +13,8 @@ int main(){
     vector<vector<int> > AdjList(v);
     for(i=0;i<e;i++){
         cin>>x>>y;
-        AdjList[--x].insert(--y);
-        AdjList[y].insert(x);
+        AdjList[--x].push_back(--y);
+        AdjList[y].push_back(x);
         AdjMat[x][y]=1;
         AdjMat[y][x]=1;
     }
