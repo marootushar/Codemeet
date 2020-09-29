@@ -1,0 +1,52 @@
+To perform BFS :
+
+1. Make a queue in which we store the nodes we need to explore.
+2. Add the source to the queue as it needs to be explored and also mark the source as visited.
+
+LOOP(till queue is empty)
+{
+    3. Take out the first node from the queue and add it in results vector and then start exploring the node.
+    4. By convention we visit the neighbouring/adjacent unvisited nodes in ascending order.
+    5. When we visit a node we mark it as visited and add it to the queue.
+}
+==========================================================================================================================
+Snakes and Ladders Problem Link : https://www.hackerrank.com/challenges/the-quickest-way-up/problem
+==========================================================================================================================
+Example Board image link : https://media.geeksforgeeks.org/wp-content/uploads/snake-and-ladders.jpg
+==========================================================================================================================
+Adjacency List after adding ladders
+
+adj[3]=[22]
+adj[5]=[8]
+adj[11]=[26]
+adj[20]=[29]
+==========================================================================================================================
+Adjacency list after adding Snakes
+
+adj[3]=[22]  Ladder
+adj[5]=[8]   Ladder
+adj[11]=[26] Ladder
+adj[17]=[4]  Snake
+adj[19]=[7]  Snake
+adj[20]=[29] Ladder
+adj[21]=[9]  Snake  
+adj[27]=[1]  Snake 
+==========================================================================================================================
+1. If we have a snake or a ladder at any point we dont need to connect that point to anything else. 
+2. While making 6 edges if any node contains a snake or ladder then instead of connecting current node to that node we 
+connect the current node to the end of the snake or ladder at that node.
+==========================================================================================================================
+Adjacency list after adding Snakes,Ladders and making connections(till node 6)
+
+adj[1]=[2,22,4,8,6,7]
+adj[2]=[22,4,8,6,7,8]
+adj[3]=[22]  Ladder
+adj[4]=[8,6,7,8,9,10]
+adj[5]=[8]   Ladder
+adj[6]=[7,8,9,10,26,12]
+adj[11]=[26] Ladder
+adj[17]=[4]  Snake
+adj[19]=[7]  Snake
+adj[20]=[29] Ladder
+adj[21]=[9]  Snake  
+adj[27]=[1]  Snake 

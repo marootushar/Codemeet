@@ -8,7 +8,7 @@ void BFS(int source)
 {
     // Queue to store elements we need to explore.
     queue<int> q;
-    // We need to check source so we push source to the queue.
+    // We need to explore source so we push source to the queue.
     q.push(source);
     visited[source] = true;
     // Loop till we have no elements to explore.
@@ -63,9 +63,13 @@ int main() {
     {
         int x,y;
         cin >> x >> y;
+        // As it is an undirected graph we need to make an edge from x to y
+        // and an edge from y to x as well.
         adj[x].push_back(y);
         adj[y].push_back(x);
     }
+    // To follow the convention of moving in ascending order 
+    // we sort the list of edges from a particular node.
     for(int i = 0; i <vertices; i++)
     {
         sort(adj[i].begin(),adj[i].end());
