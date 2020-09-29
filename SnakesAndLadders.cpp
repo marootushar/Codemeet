@@ -31,20 +31,20 @@ void BFS_SnL(int source)
 
 void solveSnL()
 {
-    int n,m,x,y;
+    int n,m,start,end;
     cin>>n;
     for(int i=0; i<n; i++)
     {
-        cin >> x >> y;
+        cin >> start >> end;
         // Making edges for ladders.
-        adj[x].push_back(y);
+        adj[start].push_back(end);
     }
     cin>>m;
     for(int i=0; i<m; i++)
     {
-        cin >> x >> y;
+        cin >> start >> end;
         // Making edges for snakes. 
-        adj[x].push_back(y);
+        adj[start].push_back(end);
     }
     // For making connection between a point and the next 6 points.
     for(int i=1; i<=100; i++)
